@@ -1,0 +1,1011 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.7 EtherNet/IP协议错误诊断 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../Modbus TCP 协议/Modbus TCP协议模块功能概述/" />
+    
+    
+    <link rel="prev" href="../配置EtherNet IP Client（主站）链接罗克韦尔（非PLC）设备/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Beacon网关概况/">
+            
+                <a href="../../Beacon网关概况/">
+            
+                    
+                    一、Beacon网关概况
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../EtherNet IP协议模块功能概述/">
+            
+                <a href="../EtherNet IP协议模块功能概述/">
+            
+                    
+                    二、EtherNet/IP协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../EtherNet IP协议模块功能概述/">
+            
+                <a href="../EtherNet IP协议模块功能概述/">
+            
+                    
+                    2.1 EtherNet/IP协议模块功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../配置模块做 EtherNet IP Server（从站）方法1/">
+            
+                <a href="../配置模块做 EtherNet IP Server（从站）方法1/">
+            
+                    
+                    2.2 配置EtherNet/IP Server（从站）方法1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../配置模块做 EtherNet IP Server（从站）方法2/">
+            
+                <a href="../配置模块做 EtherNet IP Server（从站）方法2/">
+            
+                    
+                    2.3 配置EtherNet/IP Server（从站）方法2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../配置模块做 EtherNet IP Client（主站）方法/">
+            
+                <a href="../配置模块做 EtherNet IP Client（主站）方法/">
+            
+                    
+                    2.4 配置EtherNet/IP Client（主站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../配置两个EtherNet IP Client（主站）之间数据交换/">
+            
+                <a href="../配置两个EtherNet IP Client（主站）之间数据交换/">
+            
+                    
+                    2.5 配置两个EtherNet IP Client（主站）之间数据交换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../配置EtherNet IP Client（主站）链接罗克韦尔（非PLC）设备/">
+            
+                <a href="../配置EtherNet IP Client（主站）链接罗克韦尔（非PLC）设备/">
+            
+                    
+                    2.6 配置EtherNet IP Client（主站）链接罗克韦尔（非PLC）设备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    2.7 EtherNet/IP协议错误诊断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../Modbus TCP 协议/Modbus TCP协议模块功能概述/">
+            
+                <a href="../../Modbus TCP 协议/Modbus TCP协议模块功能概述/">
+            
+                    
+                    三、Modbus TCP/IP协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../Modbus TCP 协议/Modbus TCP协议模块功能概述/">
+            
+                <a href="../../Modbus TCP 协议/Modbus TCP协议模块功能概述/">
+            
+                    
+                    3.1 Modbus TCP/IP 协议模块功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../Modbus TCP 协议/配置模块做 Modbus TCP Server（从站）方法/">
+            
+                <a href="../../Modbus TCP 协议/配置模块做 Modbus TCP Server（从站）方法/">
+            
+                    
+                    3.2 配置Modbus TCP/IP Server（从站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../Modbus TCP 协议/配置模块做 Modbus TCP Client（主站）方法/">
+            
+                <a href="../../Modbus TCP 协议/配置模块做 Modbus TCP Client（主站）方法/">
+            
+                    
+                    3.3 配置Modbus TCP/IP Client（主站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../Modbus TCP 协议/Modbus TCP协议错误诊断/">
+            
+                <a href="../../Modbus TCP 协议/Modbus TCP协议错误诊断/">
+            
+                    
+                    3.4 Modbus TCP/IP 协议错误诊断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../Modbus RTU 协议/Modbus RTU协议模块功能概述/">
+            
+                <a href="../../Modbus RTU 协议/Modbus RTU协议模块功能概述/">
+            
+                    
+                    四、Modbus RTU协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../Modbus RTU 协议/Modbus RTU协议模块功能概述/">
+            
+                <a href="../../Modbus RTU 协议/Modbus RTU协议模块功能概述/">
+            
+                    
+                    4.1 Modbus RTU 协议模块功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../Modbus RTU 协议/配置模块做 Modbus RTU Server（从站）方法/">
+            
+                <a href="../../Modbus RTU 协议/配置模块做 Modbus RTU Server（从站）方法/">
+            
+                    
+                    4.2 配置Modbus RTU Server（从站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../Modbus RTU 协议/配置模块做 Modbus RTU Client（主站）方法/">
+            
+                <a href="../../Modbus RTU 协议/配置模块做 Modbus RTU Client（主站）方法/">
+            
+                    
+                    4.3 配置Modbus RTU Client（主站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../Modbus RTU 协议/Modbus RTU协议错误诊断/">
+            
+                <a href="../../Modbus RTU 协议/Modbus RTU协议错误诊断/">
+            
+                    
+                    4.4 Modbus RTU 协议错误诊断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../西门子S7工业以太网协议/西门子S7工业以太网协议模块功能概述/">
+            
+                <a href="../../西门子S7工业以太网协议/西门子S7工业以太网协议模块功能概述/">
+            
+                    
+                    五、西门子S7工业以太网协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../西门子S7工业以太网协议/西门子S7工业以太网协议模块功能概述/">
+            
+                <a href="../../西门子S7工业以太网协议/西门子S7工业以太网协议模块功能概述/">
+            
+                    
+                    5.1 西门子S7工业以太网协议模块功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../西门子S7工业以太网协议/配置西门子S7工业以太网协议 Server（从站）/">
+            
+                <a href="../../西门子S7工业以太网协议/配置西门子S7工业以太网协议 Server（从站）/">
+            
+                    
+                    5.2 配置西门子S7工业以太网协议 Server（从站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../西门子S7工业以太网协议/配置西门子S7工业以太网协议 Client（主站）/">
+            
+                <a href="../../西门子S7工业以太网协议/配置西门子S7工业以太网协议 Client（主站）/">
+            
+                    
+                    5.3 配置西门子S7工业以太网协议 Client（主站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../西门子S7工业以太网协议/配置Client（主站）与西门子S7-200 SMART PLC通讯/">
+            
+                <a href="../../西门子S7工业以太网协议/配置Client（主站）与西门子S7-200 SMART PLC通讯/">
+            
+                    
+                    5.4 配置Client（主站）与西门子S7-200 SMART PLC通讯
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../西门子S7工业以太网协议/配置Client（主站）与西门子1200&1500PLC通讯/">
+            
+                <a href="../../西门子S7工业以太网协议/配置Client（主站）与西门子1200&1500PLC通讯/">
+            
+                    
+                    5.5 配置Client（主站）与西门子1200&1500PLC通讯
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../西门子S7工业以太网协议/西门子S7工业以太网协议错误诊断/">
+            
+                <a href="../../西门子S7工业以太网协议/西门子S7工业以太网协议错误诊断/">
+            
+                    
+                    5.6 西门子S7工业以太网协议错误诊断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../Profibus DP Master（主站）协议/Profibus DP Master（主站）协议功能概述/">
+            
+                <a href="../../Profibus DP Master（主站）协议/Profibus DP Master（主站）协议功能概述/">
+            
+                    
+                    六、Profibus DP Master（主站）协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../Profibus DP Master（主站）协议/Profibus DP Master（主站）协议功能概述/">
+            
+                <a href="../../Profibus DP Master（主站）协议/Profibus DP Master（主站）协议功能概述/">
+            
+                    
+                    6.1 Profibus DP Master（主站）协议功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../Profibus DP Master（主站）协议/配置Profibus DP Master（主站）/">
+            
+                <a href="../../Profibus DP Master（主站）协议/配置Profibus DP Master（主站）/">
+            
+                    
+                    6.2 配置Profibus DP Master（主站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../Profibus DP Slave（从站）协议/Profibus DP Slave（从站）协议功能概述/">
+            
+                <a href="../../Profibus DP Slave（从站）协议/Profibus DP Slave（从站）协议功能概述/">
+            
+                    
+                    七、Profibus DP Slave（从站）协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../Profibus DP Slave（从站）协议/Profibus DP Slave（从站）协议功能概述/">
+            
+                <a href="../../Profibus DP Slave（从站）协议/Profibus DP Slave（从站）协议功能概述/">
+            
+                    
+                    7.1 Profibus DP Slave（从站）协议功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../Profibus DP Slave（从站）协议/配置Profibus DP Slave（从站）/">
+            
+                <a href="../../Profibus DP Slave（从站）协议/配置Profibus DP Slave（从站）/">
+            
+                    
+                    7.2 配置Profibus DP Slave（从站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../DF1 协议/DF1协议模块功能概述/">
+            
+                <a href="../../DF1 协议/DF1协议模块功能概述/">
+            
+                    
+                    八、DF1 协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../DF1 协议/DF1协议模块功能概述/">
+            
+                <a href="../../DF1 协议/DF1协议模块功能概述/">
+            
+                    
+                    8.1 DF1 协议模块功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../DF1 协议/配置DF1主站/">
+            
+                <a href="../../DF1 协议/配置DF1主站/">
+            
+                    
+                    8.2 配置DF1 主站
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../DF1 协议/DF1 协议错误诊断/">
+            
+                <a href="../../DF1 协议/DF1 协议错误诊断/">
+            
+                    
+                    8.3 DF1 协议错误诊断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >2.7 EtherNet/IP协议错误诊断</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ethernetip&#x534F;&#x8BAE;&#x9519;&#x8BEF;&#x8BCA;&#x65AD;">EtherNet/IP&#x534F;&#x8BAE;&#x9519;&#x8BEF;&#x8BCA;&#x65AD;</h1>
+<p><strong>&#x9519;&#x8BEF;&#x4EE3;&#x7801;</strong></p>
+<p>&#x5728;&#x6A21;&#x5757;EtherNet/IP&#x534F;&#x8BAE;&#x7AEF;&#x53E3;&#x505A;Client&#xFF08;&#x4E3B;&#x7AD9;&#xFF09;&#x65F6;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x6A21;&#x5757;&#x9875;&#x9762;&#x67E5;&#x770B;&#x901A;&#x8BAF;&#x72B6;&#x6001;&#x4EE5;&#x53CA;&#x547D;&#x4EE4;&#x9519;&#x8BEF;&#x4EE3;&#x7801;&#xFF0C;&#x4ECE;&#x800C;&#x5FEB;&#x901F;&#x4E86;&#x89E3;&#x95EE;&#x9898;&#x6240;&#x5728;&#x3002;</p>
+<p><div align="center"><img src="assets/clip_image002.jpg" alt="img" style="zoom:50%;"></div></p>
+<p><div align="center"><img src="assets/clip_image004.jpg" alt="img" style="zoom:50%;"></div></p>
+<p>&#x76F8;&#x5173;&#x9519;&#x8BEF;&#x4EE3;&#x7801;&#x660E;&#x7EC6;&#x5982;&#x4E0B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4EE3;&#x7801;</th>
+<th>&#x4EE3;&#x7801;&#xFF08;16&#x8FDB;&#x5236;&#xFF09;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><div style="width: 50pt">0x01</div></td>
+<td>&#x8FDE;&#x63A5;&#x5931;&#x8D25;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0x02</td>
+<td>&#x8D44;&#x6E90;&#x4E0D;&#x53EF;&#x7528;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0x04</td>
+<td>&#x8DEF;&#x5F84;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0x05</td>
+<td>&#x672A;&#x77E5;&#x5BF9;&#x8C61;&#x8DEF;&#x5F84;</td>
+</tr>
+<tr>
+<td>7</td>
+<td>0x07</td>
+<td>&#x8FDE;&#x63A5;&#x4E22;&#x5931;</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0x08</td>
+<td>&#x670D;&#x52A1;&#x4E0D;&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td>9</td>
+<td>0x09</td>
+<td>&#x5C5E;&#x6027;&#x503C;&#x975E;&#x6CD5;</td>
+</tr>
+<tr>
+<td>11</td>
+<td>0x0B</td>
+<td>&#x8F93;&#x5165;&#x8BF7;&#x6C42;&#x72B6;&#x6001;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>12</td>
+<td>0x0C</td>
+<td>&#x5BF9;&#x8C61;&#x72B6;&#x6001;&#x51B2;&#x7A81;</td>
+</tr>
+<tr>
+<td>14</td>
+<td>0x0E</td>
+<td>&#x5C5E;&#x6027;&#x53EA;&#x8BFB;</td>
+</tr>
+<tr>
+<td>15</td>
+<td>0x0F</td>
+<td>&#x8FDD;&#x53CD;&#x79C1;&#x6709;&#x5C5E;&#x6027;</td>
+</tr>
+<tr>
+<td>16</td>
+<td>0x10</td>
+<td>&#x8BBE;&#x5907;&#x72B6;&#x6001;&#x51B2;&#x7A81;</td>
+</tr>
+<tr>
+<td>17</td>
+<td>0x11</td>
+<td>&#x5E94;&#x7B54;&#x6570;&#x636E;&#x8FC7;&#x5927;</td>
+</tr>
+<tr>
+<td>19</td>
+<td>0x13</td>
+<td>&#x6570;&#x636E;&#x4E0D;&#x5B8C;&#x6574;</td>
+</tr>
+<tr>
+<td>20</td>
+<td>0x14</td>
+<td>&#x5C5E;&#x6027;&#x4E0D;&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td>21</td>
+<td>0x15</td>
+<td>&#x6570;&#x636E;&#x8FC7;&#x591A;</td>
+</tr>
+<tr>
+<td>22</td>
+<td>0x16</td>
+<td>&#x5BF9;&#x8C61;&#x4E0D;&#x5B58;&#x5728;</td>
+</tr>
+<tr>
+<td>24</td>
+<td>0x18</td>
+<td>&#x5C5E;&#x6027;&#x6570;&#x636E;&#x4E0D;&#x5B58;&#x5728;</td>
+</tr>
+<tr>
+<td>25</td>
+<td>0x19</td>
+<td>&#x5B58;&#x50A8;&#x5931;&#x8D25;</td>
+</tr>
+<tr>
+<td>31</td>
+<td>0x1F</td>
+<td>&#x6307;&#x5B9A;&#x4F9B;&#x5E94;&#x5546;</td>
+</tr>
+<tr>
+<td>32</td>
+<td>0x20</td>
+<td>&#x975E;&#x6CD5;&#x670D;&#x52A1;&#x53C2;&#x6570;</td>
+</tr>
+<tr>
+<td>255</td>
+<td>0xFF</td>
+<td>&#x6570;&#x636E;&#x5730;&#x5740;&#x975E;&#x6CD5;</td>
+</tr>
+<tr>
+<td>-2</td>
+<td>0xFFFE</td>
+<td>&#x547D;&#x4EE4;&#x8D85;&#x65F6;</td>
+</tr>
+<tr>
+<td>-3</td>
+<td>0xFFFD</td>
+<td>&#x76EE;&#x6807;&#x8FDE;&#x63A5;&#x5931;&#x8D25;</td>
+</tr>
+<tr>
+<td>-4</td>
+<td>1xFFFC</td>
+<td>&#x76EE;&#x6807;&#x6CE8;&#x518C;&#x8D85;&#x65F6;</td>
+</tr>
+<tr>
+<td>-5</td>
+<td>2xFFFB</td>
+<td>&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x8D85;&#x65F6;</td>
+</tr>
+<tr>
+<td>-6</td>
+<td>3xFFFA</td>
+<td>&#x65E0;TCP/IP&#x8FDE;&#x63A5;(&#x7F51;&#x7EBF;&#x65AD;&#x5F00;)</td>
+</tr>
+<tr>
+<td>-10</td>
+<td>0xFFF6</td>
+<td>&#x7F3A;&#x5C11;&#x53C2;&#x6570;</td>
+</tr>
+<tr>
+<td>-11</td>
+<td>0xFFF5</td>
+<td>&#x529F;&#x80FD;&#x4E0D;&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td>-20</td>
+<td>0xFFEC</td>
+<td>&#x5E94;&#x7B54;&#x6570;&#x636E;&#x5305;&#x957F;&#x5EA6;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>-21</td>
+<td>0xFFEB</td>
+<td>CPF&#x6570;&#x636E;&#x9879;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>-22</td>
+<td>0xFFEA</td>
+<td>CPF&#x6570;&#x636E;&#x5730;&#x5740;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>-23</td>
+<td>0xFFE9</td>
+<td>CPF&#x6570;&#x636E;&#x7C7B;&#x578B;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>-24</td>
+<td>0xFFE8</td>
+<td>CPF&#x547D;&#x4EE4;&#x7801;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>-25</td>
+<td>0xFFE7</td>
+<td>CPF&#x72B6;&#x6001;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>-26</td>
+<td>0xFFE6</td>
+<td>CPF&#x8FDE;&#x63A5;ID&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>-27</td>
+<td>0xFFE5</td>
+<td>&#x6570;&#x636E;&#x57DF;&#x4E0A;&#x4E0B;&#x6587;&#x4E0D;&#x5339;&#x914D;</td>
+</tr>
+<tr>
+<td>-28</td>
+<td>0xFFE4</td>
+<td>&#x4F1A;&#x8BDD;&#x5904;&#x7406;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>-29</td>
+<td>0xFFE3</td>
+<td>CPF&#x6D88;&#x606F;&#x53F7;&#x4E0D;&#x5339;&#x914D;</td>
+</tr>
+<tr>
+<td>-30</td>
+<td>0xFFE2</td>
+<td>&#x4F1A;&#x8BDD;&#x6570;&#x636E;&#x957F;&#x5EA6;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>-31</td>
+<td>0xFFE1</td>
+<td>&#x4F1A;&#x8BDD;&#x6570;&#x636E;&#x72B6;&#x6001;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>-32</td>
+<td>0xFFE0</td>
+<td>&#x4F1A;&#x8BDD;&#x7248;&#x672C;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>-35</td>
+<td>0xFFDD</td>
+<td>FOPEN&#x6D88;&#x606F;&#x957F;&#x5EA6;&#x4E0D;&#x7B26;&#x5408;</td>
+</tr>
+<tr>
+<td>-36</td>
+<td>0xFFDC</td>
+<td>FOPEN&#x72B6;&#x6001;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>-41</td>
+<td>0xFFD7</td>
+<td>PCCC&#x6D88;&#x606F;&#x957F;&#x5EA6;&#x4E0D;&#x7B26;</td>
+</tr>
+<tr>
+<td>-42</td>
+<td>0xFFD6</td>
+<td>PCCC&#x6D88;&#x606F;&#x72B6;&#x6001;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>-43</td>
+<td>0xFFD5</td>
+<td>PCCC&#x547D;&#x4EE4;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td>-44</td>
+<td>0xFFD4</td>
+<td>PCCC&#x6D88;&#x606F;TNS&#x4E0D;&#x5339;&#x914D;</td>
+</tr>
+<tr>
+<td>-45</td>
+<td>0xFFD3</td>
+<td>PCCC&#x4F9B;&#x5E94;&#x5546;ID&#x4E0D;&#x5339;&#x914D;</td>
+</tr>
+<tr>
+<td>-46</td>
+<td>0xFFD2</td>
+<td>PCCC&#x5E8F;&#x5217;&#x53F7;&#x4E0D;&#x5339;&#x914D;</td>
+</tr>
+<tr>
+<td>8455</td>
+<td>0x2107</td>
+<td>&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E0D;&#x6B63;&#x786E;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../配置EtherNet IP Client（主站）链接罗克韦尔（非PLC）设备/" class="navigation navigation-prev " aria-label="Previous page: 2.6 配置EtherNet IP Client（主站）链接罗克韦尔（非PLC）设备">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../Modbus TCP 协议/Modbus TCP协议模块功能概述/" class="navigation navigation-next " aria-label="Next page: 三、Modbus TCP/IP协议">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.7 EtherNet/IP协议错误诊断","level":"1.3.7","depth":2,"next":{"title":"三、Modbus TCP/IP协议","level":"1.4","depth":1,"path":"Modbus TCP 协议/Modbus TCP协议模块功能概述/README.md","ref":"./Modbus TCP 协议/Modbus TCP协议模块功能概述/README.md","articles":[{"title":"3.1 Modbus TCP/IP 协议模块功能概述","level":"1.4.1","depth":2,"path":"Modbus TCP 协议/Modbus TCP协议模块功能概述/README.md","ref":"./Modbus TCP 协议/Modbus TCP协议模块功能概述/README.md","articles":[]},{"title":"3.2 配置Modbus TCP/IP Server（从站）","level":"1.4.2","depth":2,"path":"Modbus TCP 协议/配置模块做 Modbus TCP Server（从站）方法/README.md","ref":"./Modbus TCP 协议/配置模块做 Modbus TCP Server（从站）方法/README.md","articles":[]},{"title":"3.3 配置Modbus TCP/IP Client（主站）","level":"1.4.3","depth":2,"path":"Modbus TCP 协议/配置模块做 Modbus TCP Client（主站）方法/README.md","ref":"./Modbus TCP 协议/配置模块做 Modbus TCP Client（主站）方法/README.md","articles":[]},{"title":"3.4 Modbus TCP/IP 协议错误诊断","level":"1.4.4","depth":2,"path":"Modbus TCP 协议/Modbus TCP协议错误诊断/README.md","ref":"./Modbus TCP 协议/Modbus TCP协议错误诊断/README.md","articles":[]}]},"previous":{"title":"2.6 配置EtherNet IP Client（主站）链接罗克韦尔（非PLC）设备","level":"1.3.6","depth":2,"path":"EtherNet IP 协议/配置EtherNet IP Client（主站）链接罗克韦尔（非PLC）设备/README.md","ref":"./EtherNet IP 协议/配置EtherNet IP Client（主站）链接罗克韦尔（非PLC）设备/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"EtherNet IP 协议/EtherNet IP协议错误诊断/README.md","mtime":"2023-06-09T08:32:49.996Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-03-19T08:59:28.205Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

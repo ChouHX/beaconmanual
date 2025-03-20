@@ -1,0 +1,768 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>7.2 配置Profibus DP Slave（从站） · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../DF1 协议/DF1协议模块功能概述/" />
+    
+    
+    <link rel="prev" href="../Profibus DP Slave（从站）协议功能概述/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Beacon网关概况/">
+            
+                <a href="../../Beacon网关概况/">
+            
+                    
+                    一、Beacon网关概况
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../EtherNet IP 协议/EtherNet IP协议模块功能概述/">
+            
+                <a href="../../EtherNet IP 协议/EtherNet IP协议模块功能概述/">
+            
+                    
+                    二、EtherNet/IP协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../EtherNet IP 协议/EtherNet IP协议模块功能概述/">
+            
+                <a href="../../EtherNet IP 协议/EtherNet IP协议模块功能概述/">
+            
+                    
+                    2.1 EtherNet/IP协议模块功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../EtherNet IP 协议/配置模块做 EtherNet IP Server（从站）方法1/">
+            
+                <a href="../../EtherNet IP 协议/配置模块做 EtherNet IP Server（从站）方法1/">
+            
+                    
+                    2.2 配置EtherNet/IP Server（从站）方法1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../EtherNet IP 协议/配置模块做 EtherNet IP Server（从站）方法2/">
+            
+                <a href="../../EtherNet IP 协议/配置模块做 EtherNet IP Server（从站）方法2/">
+            
+                    
+                    2.3 配置EtherNet/IP Server（从站）方法2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../EtherNet IP 协议/配置模块做 EtherNet IP Client（主站）方法/">
+            
+                <a href="../../EtherNet IP 协议/配置模块做 EtherNet IP Client（主站）方法/">
+            
+                    
+                    2.4 配置EtherNet/IP Client（主站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../EtherNet IP 协议/配置两个EtherNet IP Client（主站）之间数据交换/">
+            
+                <a href="../../EtherNet IP 协议/配置两个EtherNet IP Client（主站）之间数据交换/">
+            
+                    
+                    2.5 配置两个EtherNet IP Client（主站）之间数据交换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../EtherNet IP 协议/配置EtherNet IP Client（主站）链接罗克韦尔（非PLC）设备/">
+            
+                <a href="../../EtherNet IP 协议/配置EtherNet IP Client（主站）链接罗克韦尔（非PLC）设备/">
+            
+                    
+                    2.6 配置EtherNet IP Client（主站）链接罗克韦尔（非PLC）设备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../EtherNet IP 协议/EtherNet IP协议错误诊断/">
+            
+                <a href="../../EtherNet IP 协议/EtherNet IP协议错误诊断/">
+            
+                    
+                    2.7 EtherNet/IP协议错误诊断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../Modbus TCP 协议/Modbus TCP协议模块功能概述/">
+            
+                <a href="../../Modbus TCP 协议/Modbus TCP协议模块功能概述/">
+            
+                    
+                    三、Modbus TCP/IP协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../Modbus TCP 协议/Modbus TCP协议模块功能概述/">
+            
+                <a href="../../Modbus TCP 协议/Modbus TCP协议模块功能概述/">
+            
+                    
+                    3.1 Modbus TCP/IP 协议模块功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../Modbus TCP 协议/配置模块做 Modbus TCP Server（从站）方法/">
+            
+                <a href="../../Modbus TCP 协议/配置模块做 Modbus TCP Server（从站）方法/">
+            
+                    
+                    3.2 配置Modbus TCP/IP Server（从站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../Modbus TCP 协议/配置模块做 Modbus TCP Client（主站）方法/">
+            
+                <a href="../../Modbus TCP 协议/配置模块做 Modbus TCP Client（主站）方法/">
+            
+                    
+                    3.3 配置Modbus TCP/IP Client（主站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../Modbus TCP 协议/Modbus TCP协议错误诊断/">
+            
+                <a href="../../Modbus TCP 协议/Modbus TCP协议错误诊断/">
+            
+                    
+                    3.4 Modbus TCP/IP 协议错误诊断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../Modbus RTU 协议/Modbus RTU协议模块功能概述/">
+            
+                <a href="../../Modbus RTU 协议/Modbus RTU协议模块功能概述/">
+            
+                    
+                    四、Modbus RTU协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../Modbus RTU 协议/Modbus RTU协议模块功能概述/">
+            
+                <a href="../../Modbus RTU 协议/Modbus RTU协议模块功能概述/">
+            
+                    
+                    4.1 Modbus RTU 协议模块功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../Modbus RTU 协议/配置模块做 Modbus RTU Server（从站）方法/">
+            
+                <a href="../../Modbus RTU 协议/配置模块做 Modbus RTU Server（从站）方法/">
+            
+                    
+                    4.2 配置Modbus RTU Server（从站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../Modbus RTU 协议/配置模块做 Modbus RTU Client（主站）方法/">
+            
+                <a href="../../Modbus RTU 协议/配置模块做 Modbus RTU Client（主站）方法/">
+            
+                    
+                    4.3 配置Modbus RTU Client（主站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../Modbus RTU 协议/Modbus RTU协议错误诊断/">
+            
+                <a href="../../Modbus RTU 协议/Modbus RTU协议错误诊断/">
+            
+                    
+                    4.4 Modbus RTU 协议错误诊断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../西门子S7工业以太网协议/西门子S7工业以太网协议模块功能概述/">
+            
+                <a href="../../西门子S7工业以太网协议/西门子S7工业以太网协议模块功能概述/">
+            
+                    
+                    五、西门子S7工业以太网协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../西门子S7工业以太网协议/西门子S7工业以太网协议模块功能概述/">
+            
+                <a href="../../西门子S7工业以太网协议/西门子S7工业以太网协议模块功能概述/">
+            
+                    
+                    5.1 西门子S7工业以太网协议模块功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../西门子S7工业以太网协议/配置西门子S7工业以太网协议 Server（从站）/">
+            
+                <a href="../../西门子S7工业以太网协议/配置西门子S7工业以太网协议 Server（从站）/">
+            
+                    
+                    5.2 配置西门子S7工业以太网协议 Server（从站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../西门子S7工业以太网协议/配置西门子S7工业以太网协议 Client（主站）/">
+            
+                <a href="../../西门子S7工业以太网协议/配置西门子S7工业以太网协议 Client（主站）/">
+            
+                    
+                    5.3 配置西门子S7工业以太网协议 Client（主站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../西门子S7工业以太网协议/配置Client（主站）与西门子S7-200 SMART PLC通讯/">
+            
+                <a href="../../西门子S7工业以太网协议/配置Client（主站）与西门子S7-200 SMART PLC通讯/">
+            
+                    
+                    5.4 配置Client（主站）与西门子S7-200 SMART PLC通讯
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../西门子S7工业以太网协议/配置Client（主站）与西门子1200&1500PLC通讯/">
+            
+                <a href="../../西门子S7工业以太网协议/配置Client（主站）与西门子1200&1500PLC通讯/">
+            
+                    
+                    5.5 配置Client（主站）与西门子1200&1500PLC通讯
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../西门子S7工业以太网协议/西门子S7工业以太网协议错误诊断/">
+            
+                <a href="../../西门子S7工业以太网协议/西门子S7工业以太网协议错误诊断/">
+            
+                    
+                    5.6 西门子S7工业以太网协议错误诊断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../Profibus DP Master（主站）协议/Profibus DP Master（主站）协议功能概述/">
+            
+                <a href="../../Profibus DP Master（主站）协议/Profibus DP Master（主站）协议功能概述/">
+            
+                    
+                    六、Profibus DP Master（主站）协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../Profibus DP Master（主站）协议/Profibus DP Master（主站）协议功能概述/">
+            
+                <a href="../../Profibus DP Master（主站）协议/Profibus DP Master（主站）协议功能概述/">
+            
+                    
+                    6.1 Profibus DP Master（主站）协议功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../Profibus DP Master（主站）协议/配置Profibus DP Master（主站）/">
+            
+                <a href="../../Profibus DP Master（主站）协议/配置Profibus DP Master（主站）/">
+            
+                    
+                    6.2 配置Profibus DP Master（主站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../Profibus DP Slave（从站）协议功能概述/">
+            
+                <a href="../Profibus DP Slave（从站）协议功能概述/">
+            
+                    
+                    七、Profibus DP Slave（从站）协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Profibus DP Slave（从站）协议功能概述/">
+            
+                <a href="../Profibus DP Slave（从站）协议功能概述/">
+            
+                    
+                    7.1 Profibus DP Slave（从站）协议功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    7.2 配置Profibus DP Slave（从站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../DF1 协议/DF1协议模块功能概述/">
+            
+                <a href="../../DF1 协议/DF1协议模块功能概述/">
+            
+                    
+                    八、DF1 协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../DF1 协议/DF1协议模块功能概述/">
+            
+                <a href="../../DF1 协议/DF1协议模块功能概述/">
+            
+                    
+                    8.1 DF1 协议模块功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../DF1 协议/配置DF1主站/">
+            
+                <a href="../../DF1 协议/配置DF1主站/">
+            
+                    
+                    8.2 配置DF1 主站
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../DF1 协议/DF1 协议错误诊断/">
+            
+                <a href="../../DF1 协议/DF1 协议错误诊断/">
+            
+                    
+                    8.3 DF1 协议错误诊断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >7.2 配置Profibus DP Slave（从站）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x914D;&#x7F6E;profibus-dp-slave&#xFF08;&#x4ECE;&#x7AD9;&#xFF09;">&#x914D;&#x7F6E;Profibus DP Slave&#xFF08;&#x4ECE;&#x7AD9;&#xFF09;</h1>
+<p>&#x70B9;&#x51FB;Profibus Slave</p>
+<p>&#x70B9;&#x5F00;Configuration.&#x67E5;&#x770B;&#x9ED8;&#x8BA4;&#x7684;&#x914D;&#x7F6E;</p>
+<p>&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x610F;&#xFF0C;&#x6B64;&#x5904;&#x8BBE;&#x7F6E;&#x7684;input&#x548C;ouput&#x90FD;&#x8F93;&#x5BF9;&#x4E8E;DP&#x4E3B;&#x7AD9;&#x800C;&#x8A00;&#x7684;&#x3002;</p>
+<p><div align="center"><img src="assets/clip_image002.jpg" alt="img" style="zoom:50%;"></div></p>
+<p>&#x5728;&#x897F;&#x95E8;&#x5B50;PLC&#x4E00;&#x4FA7;&#xFF0C;&#x6DFB;&#x52A0;OB1,OB82,OB83,OB84,OB85,OB86,OB87,OB121,OB122.&#x529F;&#x80FD;&#x5757;</p>
+<p><div align="center"><img src="assets/clip_image004.jpg" alt="img" style="zoom:50%;"></div></p>
+<p>&#x5728;&#x897F;&#x95E8;&#x5B50;PLC&#x4E2D;&#x5B89;&#x88C5;&#x6A21;&#x5757;DP&#x4ECE;&#x7AD9;&#x7684;GSD&#x6587;&#x4EF6;&#x3002;</p>
+<p><div align="center"><img src="assets/clip_image008.jpg" alt="img" style="zoom:50%;"></div></p>
+<p><div align="center"><img src="assets/clip_image010.jpg" alt="img" style="zoom:50%;"></div></p>
+<p>GSD&#x6587;&#x4EF6;&#x53EF;&#x5728;&#x968F;&#x673A;&#x5E26;&#x7684;U&#x76D8;&#x91CC;&#x9762;&#x627E;&#x5230;&#x3002;</p>
+<p><div align="center"><img src="assets/clip_image012.jpg" alt="img" style="zoom:50%;"></div></p>
+<p><div align="center"><img src="assets/clip_image014.jpg" alt="img" style="zoom:50%;"><img src="assets/clip_image016.jpg" alt="img" style="zoom:50%;"></div></p>
+<p><div align="center"><img src="assets/clip_image018.jpg" alt="img" style="zoom:50%;"></div></p>
+<p><div align="center"><img src="assets/clip_image020.jpg" alt="img" style="zoom:50%;"></div></p>
+<p>&#x914D;&#x7F6E;&#x5B8C;&#xFF0C;&#x4E0B;&#x8F7D;&#x7A0B;&#x5E8F;&#x5230;&#x897F;&#x95E8;&#x5B50;PLC&#xFF0C;&#x7136;&#x540E;&#x76D1;&#x63A7;&#x6807;&#x7B7E;&#xFF0C;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x8868;&#xFF0C;&#x5199;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#xFF0C;&#x5F3A;&#x5236;&#x53D8;&#x91CF;&#x3002;</p>
+<p><div align="center"><img src="assets/clip_image022.jpg" alt="img" style="zoom:50%;"></div></p>
+<p>&#x5728;&#x6A21;&#x5757;&#x7684;profibus slave----slave stauts&#x68C0;&#x67E5;DP&#x901A;&#x8BAF;&#x72B6;&#x6001;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x3002;</p>
+<p><div align="center"><img src="assets/clip_image024.jpg" alt="img" style="zoom:50%;"> <img src="assets/clip_image026.jpg" alt="img" style="zoom:50%;"></div></p>
+<p>&#x68C0;&#x67E5;&#x6A21;&#x5757;&#x5185;&#x90E8;&#x6570;&#x636E;&#x533A;&#x662F;&#x5426;&#x6709;&#x6570;&#x636E;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x6A21;&#x5757;&#x63A5;&#x6536;DP&#x4E3B;&#x7AD9;&#x6570;&#x636E;&#x7684;&#x5185;&#x90E8;&#x6570;&#x636E;&#x533A;&#x8D77;&#x59CB;&#x5730;&#x5740;&#x4E3A;0&#x3002;</p>
+<p>&#x524D;&#x6587;&#x4E2D;&#x4ECB;&#x7ECD;&#x5728;&#x6A21;&#x5757;Profibus Slave&#x914D;&#x7F6E;&#x9875;&#x9762;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;&#x6A21;&#x5757;&#x63A5;&#x6536;&#x3001;&#x53D1;&#x9001;DP&#x4E3B;&#x7AD9;&#x6570;&#x636E;&#x7684;&#x5185;&#x90E8;&#x6570;&#x636E;&#x533A;&#x8D77;&#x59CB;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x8BBE;&#x5B9A;&#x3002;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p>
+<p><div align="center"><img src="assets/clip_image028.jpg" alt="img" style="zoom:50%;"></div></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6A21;&#x5757;&#x5185;&#x90E8;&#x6570;&#x636E;&#x533A;&#xFF0C;&#x4ECE;0-9&#xFF0C;&#x63A5;&#x6536;&#x5230;&#x4E86;&#x897F;&#x95E8;&#x5B50;PLC&#x5199;&#x5165;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p><div align="center"><img src="assets/clip_image030.jpg" alt="img" style="zoom:50%;"></div></p>
+<p>&#x68C0;&#x67E5;&#x897F;&#x95E8;&#x5B50;&#x8F93;&#x5165;&#x6570;&#x636E;&#x3002;&#x521A;&#x624D;&#x6211;&#x4EEC;&#x8BBE;&#x5B9A;&#x4E86;&#xFF0C;&#x897F;&#x95E8;&#x5B50;PLC&#x4F5C;&#x4E3A;DP&#x4E3B;&#x7AD9;&#xFF0C;&#x91C7;&#x96C6;&#x6A21;&#x5757;&#x5185;&#x90E8;&#x6570;&#x636E;&#x533A;&#x7684;&#x8D77;&#x59CB;&#x5730;&#x5740;&#x4E3A;2500&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x3002;</p>
+<p><div align="center"><img src="assets/clip_image031.jpg" alt="img" style="zoom:50%;"></div></p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x4E86;&#x5176;&#x4ED6;&#x534F;&#x8BAE;&#x5728;&#x6A21;&#x5757;&#x5185;&#x90E8;&#x5BC4;&#x5B58;&#x5668; 2500-2747 &#x7684;&#x5730;&#x5740;&#x8D4B;&#x503C;&#xFF08;&#x6839;&#x636E;&#x5176;&#x4ED6;&#x4E0D;&#x540C;&#x578B;&#x53F7;&#x6A21;&#x5757;&#xFF0C;&#x53EF;&#x4F7F;&#x7528;&#x5BF9;&#x5E94;&#x7684;&#x534F;&#x8BAE;&#x9A71;&#x52A8;&#x5BF9;&#x6A21;&#x5757;&#x8D4B;&#x503C;&#xFF09;&#x3002;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x897F;&#x95E8;&#x5B50; S7-300&#x4E00;&#x4FA7;&#xFF0C;&#x91C7;&#x96C6;&#x5230;&#x5199;&#x51FA;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p><div align="center"><img src="assets/clip_image033.jpg" alt="img" style="zoom:50%;"></div></p>
+<p><div align="center"><img src="assets/clip_image035.jpg" alt="img" style="zoom:50%;"></div></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../Profibus DP Slave（从站）协议功能概述/" class="navigation navigation-prev " aria-label="Previous page: 7.1 Profibus DP Slave（从站）协议功能概述">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../DF1 协议/DF1协议模块功能概述/" class="navigation navigation-next " aria-label="Next page: 八、DF1 协议">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"7.2 配置Profibus DP Slave（从站）","level":"1.8.2","depth":2,"next":{"title":"八、DF1 协议","level":"1.9","depth":1,"path":"DF1 协议/DF1协议模块功能概述/README.md","ref":"./DF1 协议/DF1协议模块功能概述/README.md","articles":[{"title":"8.1 DF1 协议模块功能概述","level":"1.9.1","depth":2,"path":"DF1 协议/DF1协议模块功能概述/README.md","ref":"./DF1 协议/DF1协议模块功能概述/README.md","articles":[]},{"title":"8.2 配置DF1 主站","level":"1.9.2","depth":2,"path":"DF1 协议/配置DF1主站/README.md","ref":"./DF1 协议/配置DF1主站/README.md","articles":[]},{"title":"8.3 DF1 协议错误诊断","level":"1.9.3","depth":2,"path":"DF1 协议/DF1 协议错误诊断/README.md","ref":"./DF1 协议/DF1 协议错误诊断/README.md","articles":[]}]},"previous":{"title":"7.1 Profibus DP Slave（从站）协议功能概述","level":"1.8.1","depth":2,"path":"Profibus DP Slave（从站）协议/Profibus DP Slave（从站）协议功能概述/README.md","ref":"./Profibus DP Slave（从站）协议/Profibus DP Slave（从站）协议功能概述/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Profibus DP Slave（从站）协议/配置Profibus DP Slave（从站）/README.md","mtime":"2023-06-19T07:25:34.421Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-03-19T08:59:28.205Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
