@@ -1,0 +1,846 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>9.4 举例2.模块Profinet Slot Data功能使用（西门子S7-1200 PLC交换数据） · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../举例1.西门子S7-1200 PLC和罗克韦尔 PLC 之间交换数据/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Beacon网关概况/">
+            
+                <a href="../../Beacon网关概况/">
+            
+                    
+                    一、Beacon网关概况
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../EtherNet IP 协议/EtherNet IP协议模块功能概述/">
+            
+                <a href="../../EtherNet IP 协议/EtherNet IP协议模块功能概述/">
+            
+                    
+                    二、EtherNet/IP协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../EtherNet IP 协议/EtherNet IP协议模块功能概述/">
+            
+                <a href="../../EtherNet IP 协议/EtherNet IP协议模块功能概述/">
+            
+                    
+                    2.1 EtherNet/IP协议模块功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../EtherNet IP 协议/配置模块做 EtherNet IP Server（从站）方法1/">
+            
+                <a href="../../EtherNet IP 协议/配置模块做 EtherNet IP Server（从站）方法1/">
+            
+                    
+                    2.2 配置EtherNet/IP Server（从站）方法1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../EtherNet IP 协议/配置模块做 EtherNet IP Server（从站）方法2/">
+            
+                <a href="../../EtherNet IP 协议/配置模块做 EtherNet IP Server（从站）方法2/">
+            
+                    
+                    2.3 配置EtherNet/IP Server（从站）方法2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../EtherNet IP 协议/配置模块做 EtherNet IP Client（主站）方法/">
+            
+                <a href="../../EtherNet IP 协议/配置模块做 EtherNet IP Client（主站）方法/">
+            
+                    
+                    2.4 配置EtherNet/IP Client（主站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../EtherNet IP 协议/配置两个EtherNet IP Client（主站）之间数据交换/">
+            
+                <a href="../../EtherNet IP 协议/配置两个EtherNet IP Client（主站）之间数据交换/">
+            
+                    
+                    2.5 配置两个EtherNet IP Client（主站）之间数据交换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../EtherNet IP 协议/配置EtherNet IP Client（主站）链接罗克韦尔（非PLC）设备/">
+            
+                <a href="../../EtherNet IP 协议/配置EtherNet IP Client（主站）链接罗克韦尔（非PLC）设备/">
+            
+                    
+                    2.6 配置EtherNet IP Client（主站）链接罗克韦尔（非PLC）设备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../EtherNet IP 协议/EtherNet IP协议错误诊断/">
+            
+                <a href="../../EtherNet IP 协议/EtherNet IP协议错误诊断/">
+            
+                    
+                    2.7 EtherNet/IP协议错误诊断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../Modbus TCP 协议/Modbus TCP协议模块功能概述/">
+            
+                <a href="../../Modbus TCP 协议/Modbus TCP协议模块功能概述/">
+            
+                    
+                    三、Modbus TCP/IP协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../Modbus TCP 协议/Modbus TCP协议模块功能概述/">
+            
+                <a href="../../Modbus TCP 协议/Modbus TCP协议模块功能概述/">
+            
+                    
+                    3.1 Modbus TCP/IP 协议模块功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../Modbus TCP 协议/配置模块做 Modbus TCP Server（从站）方法/">
+            
+                <a href="../../Modbus TCP 协议/配置模块做 Modbus TCP Server（从站）方法/">
+            
+                    
+                    3.2 配置Modbus TCP/IP Server（从站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../Modbus TCP 协议/配置模块做 Modbus TCP Client（主站）方法/">
+            
+                <a href="../../Modbus TCP 协议/配置模块做 Modbus TCP Client（主站）方法/">
+            
+                    
+                    3.3 配置Modbus TCP/IP Client（主站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../Modbus TCP 协议/Modbus TCP协议错误诊断/">
+            
+                <a href="../../Modbus TCP 协议/Modbus TCP协议错误诊断/">
+            
+                    
+                    3.4 Modbus TCP/IP 协议错误诊断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../Modbus RTU 协议/Modbus RTU协议模块功能概述/">
+            
+                <a href="../../Modbus RTU 协议/Modbus RTU协议模块功能概述/">
+            
+                    
+                    四、Modbus RTU协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../Modbus RTU 协议/Modbus RTU协议模块功能概述/">
+            
+                <a href="../../Modbus RTU 协议/Modbus RTU协议模块功能概述/">
+            
+                    
+                    4.1 Modbus RTU 协议模块功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../Modbus RTU 协议/配置模块做 Modbus RTU Server（从站）方法/">
+            
+                <a href="../../Modbus RTU 协议/配置模块做 Modbus RTU Server（从站）方法/">
+            
+                    
+                    4.2 配置Modbus RTU Server（从站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../Modbus RTU 协议/配置模块做 Modbus RTU Client（主站）方法/">
+            
+                <a href="../../Modbus RTU 协议/配置模块做 Modbus RTU Client（主站）方法/">
+            
+                    
+                    4.3 配置Modbus RTU Client（主站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../Modbus RTU 协议/Modbus RTU协议错误诊断/">
+            
+                <a href="../../Modbus RTU 协议/Modbus RTU协议错误诊断/">
+            
+                    
+                    4.4 Modbus RTU 协议错误诊断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../西门子S7工业以太网协议/西门子S7工业以太网协议模块功能概述/">
+            
+                <a href="../../西门子S7工业以太网协议/西门子S7工业以太网协议模块功能概述/">
+            
+                    
+                    五、西门子S7工业以太网协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../西门子S7工业以太网协议/西门子S7工业以太网协议模块功能概述/">
+            
+                <a href="../../西门子S7工业以太网协议/西门子S7工业以太网协议模块功能概述/">
+            
+                    
+                    5.1 西门子S7工业以太网协议模块功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../西门子S7工业以太网协议/配置西门子S7工业以太网协议 Server（从站）/">
+            
+                <a href="../../西门子S7工业以太网协议/配置西门子S7工业以太网协议 Server（从站）/">
+            
+                    
+                    5.2 配置西门子S7工业以太网协议 Server（从站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../西门子S7工业以太网协议/配置西门子S7工业以太网协议 Client（主站）/">
+            
+                <a href="../../西门子S7工业以太网协议/配置西门子S7工业以太网协议 Client（主站）/">
+            
+                    
+                    5.3 配置西门子S7工业以太网协议 Client（主站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../西门子S7工业以太网协议/配置Client（主站）与西门子S7-200 SMART PLC通讯/">
+            
+                <a href="../../西门子S7工业以太网协议/配置Client（主站）与西门子S7-200 SMART PLC通讯/">
+            
+                    
+                    5.4 配置Client（主站）与西门子S7-200 SMART PLC通讯
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../西门子S7工业以太网协议/配置Client（主站）与西门子1200&1500PLC通讯/">
+            
+                <a href="../../西门子S7工业以太网协议/配置Client（主站）与西门子1200&1500PLC通讯/">
+            
+                    
+                    5.5 配置Client（主站）与西门子1200&1500PLC通讯
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../西门子S7工业以太网协议/西门子S7工业以太网协议错误诊断/">
+            
+                <a href="../../西门子S7工业以太网协议/西门子S7工业以太网协议错误诊断/">
+            
+                    
+                    5.6 西门子S7工业以太网协议错误诊断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../Profibus DP Master（主站）协议/Profibus DP Master（主站）协议功能概述/">
+            
+                <a href="../../Profibus DP Master（主站）协议/Profibus DP Master（主站）协议功能概述/">
+            
+                    
+                    六、Profibus DP Master（主站）协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../Profibus DP Master（主站）协议/Profibus DP Master（主站）协议功能概述/">
+            
+                <a href="../../Profibus DP Master（主站）协议/Profibus DP Master（主站）协议功能概述/">
+            
+                    
+                    6.1 Profibus DP Master（主站）协议功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../Profibus DP Master（主站）协议/配置Profibus DP Master（主站）/">
+            
+                <a href="../../Profibus DP Master（主站）协议/配置Profibus DP Master（主站）/">
+            
+                    
+                    6.2 配置Profibus DP Master（主站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../Profibus DP Slave（从站）协议/Profibus DP Slave（从站）协议功能概述/">
+            
+                <a href="../../Profibus DP Slave（从站）协议/Profibus DP Slave（从站）协议功能概述/">
+            
+                    
+                    七、Profibus DP Slave（从站）协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../Profibus DP Slave（从站）协议/Profibus DP Slave（从站）协议功能概述/">
+            
+                <a href="../../Profibus DP Slave（从站）协议/Profibus DP Slave（从站）协议功能概述/">
+            
+                    
+                    7.1 Profibus DP Slave（从站）协议功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../Profibus DP Slave（从站）协议/配置Profibus DP Slave（从站）/">
+            
+                <a href="../../Profibus DP Slave（从站）协议/配置Profibus DP Slave（从站）/">
+            
+                    
+                    7.2 配置Profibus DP Slave（从站）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../DF1 协议/DF1协议模块功能概述/">
+            
+                <a href="../../DF1 协议/DF1协议模块功能概述/">
+            
+                    
+                    八、DF1 协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../DF1 协议/DF1协议模块功能概述/">
+            
+                <a href="../../DF1 协议/DF1协议模块功能概述/">
+            
+                    
+                    8.1 DF1 协议模块功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../DF1 协议/配置DF1主站/">
+            
+                <a href="../../DF1 协议/配置DF1主站/">
+            
+                    
+                    8.2 配置DF1 主站
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../DF1 协议/DF1 协议错误诊断/">
+            
+                <a href="../../DF1 协议/DF1 协议错误诊断/">
+            
+                    
+                    8.3 DF1 协议错误诊断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Profinet Server（从站）协议模块功能概述/">
+            
+                <a href="../Profinet Server（从站）协议模块功能概述/">
+            
+                    
+                    九、Profinet Server (从站) 协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Profinet Server（从站）协议模块功能概述/">
+            
+                <a href="../Profinet Server（从站）协议模块功能概述/">
+            
+                    
+                    9.1 Profinet Server (从站) 协议模块功能概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../配置Profinet Server（从站）/">
+            
+                <a href="../配置Profinet Server（从站）/">
+            
+                    
+                    9.2 配置Profinet Server (从站)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../举例1.西门子S7-1200 PLC和罗克韦尔 PLC 之间交换数据/">
+            
+                <a href="../举例1.西门子S7-1200 PLC和罗克韦尔 PLC 之间交换数据/">
+            
+                    
+                    9.3 举例1.西门子S7-1200 PLC和罗克韦尔 PLC 之间交换数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    9.4 举例2.模块Profinet Slot Data功能使用（西门子S7-1200 PLC交换数据）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >9.4 举例2.模块Profinet Slot Data功能使用（西门子S7-1200 PLC交换数据）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x4E3E;&#x4F8B;2&#x6A21;&#x5757;profinet-slot-data&#x529F;&#x80FD;&#x4F7F;&#x7528;&#xFF08;&#x897F;&#x95E8;&#x5B50;s7-1200-plc&#x4EA4;&#x6362;&#x6570;&#x636E;&#xFF09;">&#x4E3E;&#x4F8B;2.&#x6A21;&#x5757;Profinet Slot Data&#x529F;&#x80FD;&#x4F7F;&#x7528;&#xFF08;&#x897F;&#x95E8;&#x5B50;S7-1200 PLC&#x4EA4;&#x6362;&#x6570;&#x636E;&#xFF09;</h2>
+<p>Slot Data&#x529F;&#x80FD;&#x662F;&#x6A21;&#x5757;&#x4F5C;&#x4E3A;Profinet Server&#x76F4;&#x63A5;&#x9488;&#x5BF9;&#x897F;&#x95E8;&#x5B50;PLC&#x4E2D;IO&#x8BBE;&#x5907;&#x6570;&#x636E;&#x69FD;&#x7684;&#x901A;&#x8BAF;&#x6A21;&#x5F0F;&#xFF0C;&#x8BE5;&#x6A21;&#x5F0F;&#x5BF9;PLC&#x4E2D;IO&#x8BBE;&#x5907;&#x7684;&#x6BCF;&#x4E2A;&#x63D2;&#x69FD;&#x5355;&#x72EC;&#x8FDB;&#x884C;&#x6307;&#x4EE4;&#x914D;&#x7F6E;&#xFF0C;&#x53EF;&#x5927;&#x5927;&#x964D;&#x4F4E;&#x901A;&#x8BAF;&#x5EF6;&#x8FDF;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4ECB;&#x7ECD;&#x6A21;&#x5757;Slot Data&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;PLC&#x7AEF;&#x7684;&#x914D;&#x7F6E;&#x65B9;&#x5F0F;&#x4E0E;&#x524D;&#x6587;&#x4E3E;&#x5217;1&#x4E2D;&#x7684;&#x914D;&#x7F6E;&#x65B9;&#x5F0F;&#x4E00;&#x6837;&#xFF0C;&#x8FD9;&#x91CC;&#x4E0D;&#x518D;&#x53D9;&#x8FF0;&#x3002;</p>
+<p>&#x5728;&#x6A21;&#x5757;&#x4E3B;&#x9875;&#x9762;&#x4E2D;&#x70B9;&#x51FB; &#x201C;Profinet Slot Data<strong>&#x201D;</strong>&#xFF0C;&#x5728;&#x4E0B;&#x62C9;&#x83DC;&#x5355;&#x4E2D;&#x70B9;&#x51FB;Configuration&#x6253;&#x5F00;&#x201C;Slot Data Mode&#x201D;&#x4F7F;&#x80FD;&#xFF0C;&#x6253;&#x5F00;&#x4F7F;&#x80FD;&#x540E;&#x6A21;&#x5757;&#x4E0D;&#x518D;&#x4F7F;&#x7528;&#x4E4B;&#x524D;&#x7684;Profinet&#x8FDE;&#x63A5;&#x65B9;&#x5F0F;&#x548C;IO&#x914D;&#x7F6E;&#x3002;</p>
+<p><img src="assets/&#x56FE;&#x7247;31.png" style="zoom:50%;"></p>
+<p>&#x4E0B;&#x56FE;&#x4E3A;PLC&#x4E2D;&#x6A21;&#x5757;&#x7684;IO&#x5206;&#x914D;</p>
+<p><img src="assets/&#x56FE;&#x7247;32.png" style="zoom:50%;"></p>
+<p>&#x70B9;&#x51FB;Commands</p>
+<center><img src="assets/&#x56FE;&#x7247;33.png" style="zoom:70%;"><img src="assets/&#x56FE;&#x7247;34.png" alt="&#x56FE;&#x7247;34" style="zoom:50%;"></center>
+
+<p>&#x901A;&#x8FC7;&#x6DFB;&#x52A0;&#x6307;&#x4EE4;&#x914D;&#x7F6E;&#x6A21;&#x5757;&#xFF0C;&#x4F7F;&#x6A21;&#x5757;&#x4E0E;PLC&#x4E2D;&#x5BF9;&#x5E94;&#x63D2;&#x69FD;&#x7684;IO&#x6570;&#x636E;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#x3002;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x5BF9;&#x5E94;PLC&#x4E00;&#x4E2A;&#x63D2;&#x69FD;&#xFF0C;&#x9700;&#x8981;&#x4E0E;PLC&#x591A;&#x5C11;&#x63D2;&#x69FD;&#x7684;&#x6570;&#x636E;&#x901A;&#x8BAF;&#x5C31;&#x914D;&#x7F6E;&#x591A;&#x5C11;&#x6761;&#x6307;&#x4EE4;&#x3002;</p>
+<p><img src="assets/&#x56FE;&#x7247;35.png" alt="&#x56FE;&#x7247;35" style="zoom:50%;"></p>
+<p><strong>Slot:</strong> &#x5BF9;&#x5E94;PLC&#x4E2D;&#x7684;IO&#x63D2;&#x69FD;&#x53F7;    </p>
+<p><strong>Input Data Swap:</strong> &#x8F93;&#x5165;&#x6570;&#x636E;&#x662F;&#x5426;&#x9AD8;&#x4F4E;&#x4F4D;&#x8F6C;&#x6362;</p>
+<p><strong>Output Data Swap:</strong> &#x8F93;&#x51FA;&#x6570;&#x636E;&#x662F;&#x5426;&#x9AD8;&#x4F4E;&#x4F4D;&#x8F6C;&#x6362;</p>
+<p><strong>Clear Database Offine:</strong> &#x9009;&#x62E9;&#x5F53;Profinet&#x901A;&#x8BAF;&#x4E2D;&#x65AD;&#x65F6;&#x662F;&#x5426;&#x6E05;&#x9664;&#x6700;&#x540E;&#x4F20;&#x8FC7;&#x6765;&#x7684;&#x6570;&#x636E;</p>
+<p><strong>Input Byte Size:</strong> &#x8F93;&#x5165;&#x6570;&#x636E;&#x5927;&#x5C0F;&#xFF08;&#x6700;&#x5927;&#x4E0D;&#x8D85;&#x8FC7;PLC&#x4E2D;&#x5BF9;&#x5E94;&#x63D2;&#x69FD;&#x7684;&#x6570;&#x636E;&#x5927;&#x5C0F;&#xFF09;</p>
+<p><strong>Output Byte Size:</strong> &#x8F93;&#x51FA;&#x6570;&#x636E;&#x5927;&#x5C0F;&#xFF08;&#x6700;&#x5927;&#x4E0D;&#x8D85;&#x8FC7;PLC&#x4E2D;&#x5BF9;&#x5E94;&#x63D2;&#x69FD;&#x7684;&#x6570;&#x636E;&#x5927;&#x5C0F;&#xFF09;</p>
+<p><strong>Poll Interval:</strong> &#x547D;&#x4EE4;&#x8F6E;&#x8BE2;&#x65F6;&#x95F4;</p>
+<p><strong>Internal Input Data Address:</strong> &#x8F93;&#x5165;&#x6570;&#x636E;&#x5728;&#x6A21;&#x5757;&#x5185;&#x90E8;&#x7684;&#x8D77;&#x59CB;&#x5730;&#x5740;</p>
+<p><strong>Internal output Data Address:</strong> &#x8F93;&#x51FA;&#x6570;&#x636E;&#x5728;&#x6A21;&#x5757;&#x5185;&#x90E8;&#x7684;&#x8D77;&#x59CB;&#x5730;&#x5740;</p>
+<p>&#x914D;&#x7F6E;&#x597D;&#x901A;&#x8BAF;&#x6307;&#x4EE4;&#xFF0C;&#x70B9;&#x51FB;Save&#xFF0C;&#x518D;&#x70B9;&#x51FB;OK,&#x6A21;&#x5757;&#x91CD;&#x542F;&#x540E;&#x914D;&#x7F6E;&#x751F;&#x6548;&#x3002;</p>
+<p><img src="assets/&#x56FE;&#x7247;36.png" alt="&#x56FE;&#x7247;36" style="zoom:50%;"></p>
+<p>&#x6253;&#x5F00;PLC&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;&#x6570;&#x636E;&#x901A;&#x8BAF;&#xFF0C;&#x5EFA;&#x7ACB;&#x76D1;&#x63A7;&#x8868;&#xFF0C;&#x8F93;&#x5165;&#x51E0;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x8F93;&#x51FA;&#x51E0;&#x4E2A;&#x53D8;&#x91CF;&#x3002;&#x5730;&#x5740;&#x7684;&#x8D77;&#x59CB;&#x4E0E;&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x914D;&#x7F6E;&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x5730;&#x5740;&#x5BF9;&#x5E94;&#x3002;&#x4FEE;&#x6539;&#x5BF9;&#x5E94;&#x7684;QW&#x70B9;&#x6570;&#x636E;&#x3002;</p>
+<center><img src="assets/&#x56FE;&#x7247;37.png" alt="&#x56FE;&#x7247;37" style="zoom:50%;"><img src="assets/&#x56FE;&#x7247;38.png" alt="&#x56FE;&#x7247;38" style="zoom:60%;"></center>
+
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x6A21;&#x5757;&#x7684;&#x5185;&#x90E8;&#x6570;&#x636E;&#x533A;&#x770B;&#x5230;&#x7531;PLC&#x901A;&#x8FC7;Profinet&#x534F;&#x8BAE;&#x4F20;&#x8FC7;&#x6765;&#x7684;&#x6570;&#x636E;</p>
+<p><img src="assets/&#x56FE;&#x7247;39.png" alt="&#x56FE;&#x7247;39" style="zoom:50%;"></p>
+<p>Profinet&#x534F;&#x8BAE;&#x4F20;&#x8FC7;&#x6765;&#x5B58;&#x653E;&#x7684;&#x5185;&#x90E8;&#x6570;&#x636E;&#x533A;&#x8D77;&#x59CB;&#x5730;&#x5740;&#x4E0E;&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x914D;&#x7F6E;&#x7684;&#x4E00;&#x81F4;</p>
+<p><img src="assets/&#x56FE;&#x7247;40.png" alt="&#x56FE;&#x7247;40" style="zoom:50%;"></p>
+<p>&#x5728; RSLogix5000 &#x5185;&#x5EFA;&#x7ACB; CIP &#x8F93;&#x5165;&#x8F93;&#x51FA;&#x6570;&#x7EC4;&#xFF0C;&#x5177;&#x4F53;&#x5185;&#x5BB9;&#x8BF7;&#x89C1;&#x524D;&#x6587;&#x201C;&#x914D;&#x7F6E;&#x6A21;&#x5757;&#x505A; EtherNet/IP Server&#x201D;&#x3002;&#x524D;&#x6587;&#x6211;&#x4EEC;&#x4ECB;&#x7ECD;&#x8FC7;&#xFF0C;&#x6A21;&#x5757; EtherNet/IP &#x505A; Server &#x65F6;&#xFF0C;CIP &#x8F93;&#x5165;&#x6807;&#x7B7E;&#x5BF9;&#x5E94;&#x6A21;&#x5757;&#x5185;&#x90E8;&#x6570;&#x636E;&#x533A;&#x7684;&#x5173;&#x7CFB; </p>
+<p><img src="assets/&#x56FE;&#x7247;41.png" alt="&#x56FE;&#x7247;41" style="zoom:50%;"></p>
+<p>EN:0:I.Data[0]- EN:0:I.Data[247]&#x5BF9;&#x5E94;&#x6A21;&#x5757;&#x5185;&#x90E8;&#x5BC4;&#x5B58;&#x5668; 0-247 &#x7684;&#x5730;&#x5740;,&#x53EF;&#x4EE5;&#x770B;&#x5230; RSLogix5000 &#x4E2D;&#xFF0C;&#x91C7;&#x96C6;&#x5230;&#x4E86;&#x897F;&#x95E8;&#x5B50; PLC &#x5199;&#x51FA;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p><img src="assets/&#x56FE;&#x7247;42.png" alt="&#x56FE;&#x7247;42" style="zoom:50%;"></p>
+<p>&#x7136;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5728;AB PLC &#x7684;&#x8F93;&#x51FA;&#x6807;&#x7B7E;&#x7EC4;&#x4E2D;&#x5199;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#x3002; </p>
+<p>&#x524D;&#x6587;&#x6211;&#x4EEC;&#x4ECB;&#x7ECD;&#x8FC7;&#xFF0C;&#x6A21;&#x5757; EtherNet/IP &#x505A; Server &#x65F6;&#xFF0C;CIP &#x8F93;&#x51FA;&#x6807;&#x7B7E;&#x5BF9;&#x5E94;&#x6A21;&#x5757;&#x5185;&#x90E8;&#x6570;&#x636E;&#x533A;&#x7684;&#x5173;&#x7CFB;:EN:0:O.Data[0]- EN:0:O.Data[247]&#x5BF9;&#x5E94;&#x6A21;&#x5757;&#x5185;&#x90E8;&#x5BC4;&#x5B58;&#x5668;2500-2747 &#x7684;&#x5730;&#x5740;&#x3002;</p>
+<p><img src="assets/&#x56FE;&#x7247;43.png" alt="&#x56FE;&#x7247;43" style="zoom:50%;"></p>
+<p>&#x67E5;&#x770B;&#x6A21;&#x5757;&#x5185;&#x90E8;&#x5BC4;&#x5B58;&#x5668; 2500-2503&#x7684;&#x5730;&#x5740;&#xFF0C;&#x63A5;&#x6536;&#x5230;&#x4E86; RSLogix5000 &#x5199;&#x5165;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p><img src="assets/&#x56FE;&#x7247;44.png" alt="&#x56FE;&#x7247;44" style="zoom:50%;"></p>
+<p>&#x67E5;&#x770B;&#x6A21;&#x5757;&#x5185;&#x90E8;&#x5BC4;&#x5B58;&#x5668; 2500-2503&#x7684;&#x5730;&#x5740;&#xFF0C;&#x63A5;&#x6536;&#x5230;&#x4E86; RSLogix5000 &#x5199;&#x5165;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p><img src="assets/&#x56FE;&#x7247;45.png" alt="&#x56FE;&#x7247;45" style="zoom:50%;"></p>
+<p>&#x53EF;&#x4EE5;&#x5728;&#x897F;&#x95E8;&#x5B50;PLC&#x91CC;&#x6536;&#x5230; RSLogix5000&#x5199;&#x51FA;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p><img src="assets/&#x56FE;&#x7247;46.png" alt="&#x56FE;&#x7247;46" style="zoom:50%;"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../举例1.西门子S7-1200 PLC和罗克韦尔 PLC 之间交换数据/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 9.3 举例1.西门子S7-1200 PLC和罗克韦尔 PLC 之间交换数据">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"9.4 举例2.模块Profinet Slot Data功能使用（西门子S7-1200 PLC交换数据）","level":"1.10.4","depth":2,"previous":{"title":"9.3 举例1.西门子S7-1200 PLC和罗克韦尔 PLC 之间交换数据","level":"1.10.3","depth":2,"path":"Profinet Server（从站）协议/举例1.西门子S7-1200 PLC和罗克韦尔 PLC 之间交换数据/README.md","ref":"./Profinet Server（从站）协议/举例1.西门子S7-1200 PLC和罗克韦尔 PLC 之间交换数据/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Profinet Server（从站）协议/举例2.模块Profinet Slot Data功能使用（西门子S7-1200 PLC交换数据）/README.md","mtime":"2025-07-07T07:54:31.392Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-07-07T09:35:13.699Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
